@@ -1,0 +1,16 @@
+def search_number(arr, target):
+    
+    for i in range(len(arr)):
+        if arr[i] == target:
+            return i  
+    return -1  
+
+
+arr = [10, 20, 30, 40, 50, 20, 60]
+target = int(input("Enter the number to search: "))
+result = search_number(arr, target)
+
+if result != -1:
+    print(f"Number {target} found at index {result}.")
+else:
+    print(f"Number {target} not found in the array.")

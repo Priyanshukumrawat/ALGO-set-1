@@ -1,0 +1,19 @@
+def count_frequency(arr):
+    frequency = {}  
+    
+    
+    for num in arr:
+        if num in frequency:
+            frequency[num] += 1
+        else:
+            frequency[num] = 1
+    
+    return frequency
+
+
+arr = [1, 2, 3, 4, 5, 2, 3, 3, 6, 7, 7]
+frequency = count_frequency(arr)
+
+
+for num, count in frequency.items():
+    print(f"Number {num} appears {count} times.")

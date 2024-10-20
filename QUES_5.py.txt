@@ -1,0 +1,15 @@
+def is_palindrome(arr):
+    
+    return arr == arr[::-1]
+
+
+arr = []
+for i in range(5):
+    num = int(input(f"Enter number {i+1}: "))
+    arr.append(num)
+
+
+if is_palindrome(arr):
+    print("The array is in palindrome order.")
+else:
+    print("The array is not in palindrome order.")

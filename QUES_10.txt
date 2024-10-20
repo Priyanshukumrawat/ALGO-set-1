@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+void printParallelogram(int rows, int cols) {
+    for (int i = 1; i <= rows; i++) {
+        // Print leading spaces for shifting the stars
+        for (int j = 1; j <= rows - i; j++) {
+            printf(" ");
+        }
+        // Print the stars for the row
+        for (int j = 1; j <= cols; j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+}
+
+int main() {
+    int rows, cols;
+    printf("Enter the number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter the number of columns: ");
+    scanf("%d", &cols);
+    
+    printParallelogram(rows, cols);
+    
+    return 0;
+}

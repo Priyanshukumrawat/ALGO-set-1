@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdbool.h>
+
+bool printDiamond(int rows) {
+    // Check if the number of rows is odd
+    if (rows % 2 == 0) {
+        printf("Error: Number of rows must be odd.\n");
+        return false;
+    }
+
+    int mid = (rows + 1) / 2; // Calculate the middle row
+
+    // Upper part of the diamond (including the middle row)
+    for (int i = 1; i <= mid; i++) {
+        // Print spaces
+        for (int j = i; j < mid; j++) {
+            printf(" ");
+        }
+        // Print stars
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    // Lower part of the diamond (after the middle row)
+    for (int i = mid - 1; i >= 1; i--) {
+        // Print spaces
+        for (int j = mid; j > i; j--) {
+            printf(" ");
+        }
+        // Print stars
+        for (int j = 1; j <= (2 * i - 1); j++) {
+            printf("*");
+        }
+        printf("\n");
+    }
+
+    return true;
+}
+
+int main() {
+    int rows;
+    printf("Enter the number of rows (odd number): ");
+    scanf("%d", &rows);
+
+    if (printDiamond(rows)) {
+        printf("Diamond pattern printed successfully.\n");
+    } else {
+        printf("Failed to print the diamond pattern.\n");
+    }
+
+    return 0;
+}
